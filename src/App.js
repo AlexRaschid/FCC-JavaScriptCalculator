@@ -1,10 +1,13 @@
 import { Button, Container } from 'react-bootstrap';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { Col, Row, ListGroup } from 'react-bootstrap';
 export default App => {
 
-    let [displayText, setDisplayText] = useState(0);
+    let [displayText, setDisplayText] = useState('0');
+
+
+    
 
 
     let generateNumPad = () => {
@@ -25,14 +28,20 @@ export default App => {
                         case '-':
                             return (<Button id={'subtract'}>{digit}</Button>);
                         default:
-                            return (<Button id={DIGIT_NAMES[digit]}>{digit}</Button>);
+                            return (<Button key={DIGIT_NAMES[digit]} id={DIGIT_NAMES[digit]} 
+                                            onClick={() => {
+                                                console.log(displayText);
+                                                displayText === '0' ? setDisplayText(digit) : setDisplayText(displayText + digit);
+                                            }}>{digit}</Button>);
                     }  
                 }
+
+                
         });
     }
 
 
-
+    
 
     
 
@@ -51,7 +60,7 @@ export default App => {
                     </Row>
                     <Row className="text-center">
                         <Col xs={6}>
-                         <Button id='clear'>AC</Button>
+                         <Button id='clear' onClick={() => {setDisplayText('0')}}>AC</Button>
                         </Col>
                         <Col xs={6}>
                          <Button id="equals">=</Button>
