@@ -2,7 +2,6 @@ import { Button, Container } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 
 import { Col, Row, ListGroup } from 'react-bootstrap';
-import { Jsep } from 'jsep';
 export default App => {
 
     let [displayText, setDisplayText] = useState('0');
@@ -115,7 +114,7 @@ export default App => {
                          <Button id="equals" onClick={() => {
                              setCalculationString(calculationString + displayText);
                              setDisplayText('') 
-                             console.log(Jsep.parse(calculationString))
+                             console.log()
                             }}>=</Button>
                         </Col>
                     </Row>
