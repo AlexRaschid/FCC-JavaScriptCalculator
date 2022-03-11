@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/FCC-JavaScriptCalculator/static/js/main.3bda3e69.js",
+    "index.html": "/FCC-JavaScriptCalculator/index.html",
+    "main.3bda3e69.js.map": "/FCC-JavaScriptCalculator/static/js/main.3bda3e69.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.3bda3e69.js"
+  ]
+}
